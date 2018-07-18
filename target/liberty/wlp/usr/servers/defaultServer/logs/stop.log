@@ -1,0 +1,21 @@
+java.io.IOException: connection closed by server without a reply
+	at com.ibm.ws.kernel.boot.internal.commands.ServerCommandClient.write(ServerCommandClient.java:125)
+	at com.ibm.ws.kernel.boot.internal.commands.ServerCommandClient.stopServer(ServerCommandClient.java:237)
+	at com.ibm.ws.kernel.boot.internal.commands.ProcessControlHelper.stop(ProcessControlHelper.java:97)
+	at com.ibm.ws.kernel.boot.Launcher.handleActions(Launcher.java:263)
+	at com.ibm.ws.kernel.boot.Launcher.createPlatform(Launcher.java:119)
+	at com.ibm.ws.kernel.boot.cmdline.EnvCheck.main(EnvCheck.java:59)
+	at com.ibm.ws.kernel.boot.cmdline.EnvCheck.main(EnvCheck.java:35)
+
+arg0=defaultServer
+arg1=--pid=
+arg2=--stop
+exit=21
+
+                 Java home:  /usr/lib/jvm/java-8-openjdk-amd64/jre
+              Install root:  /home/ibmdemo/workspace-microprofile/microprofile/target/liberty/wlp/
+          System libraries:  /home/ibmdemo/workspace-microprofile/microprofile/target/liberty/wlp/lib/
+                 User root:  /home/ibmdemo/workspace-microprofile/microprofile/target/liberty/wlp/usr/
+                    Config:  /home/ibmdemo/workspace-microprofile/microprofile/target/liberty/wlp/usr/servers/defaultServer/
+                    Output:  /home/ibmdemo/workspace-microprofile/microprofile/target/liberty/wlp/usr/servers/defaultServer/
+

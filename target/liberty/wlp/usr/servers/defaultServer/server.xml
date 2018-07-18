@@ -1,0 +1,18 @@
+<server description="OpenLiberty MicroProfile server">
+<featureManager>
+      <feature>microprofile-1.2</feature>
+      <feature>jndi-1.0</feature>
+      <feature>jsp-2.3</feature>
+      <feature>servlet-3.1</feature>
+      <feature>managedBeans-1.0</feature>
+      <feature>websocket-1.1</feature>
+      <feature>localConnector-1.0</feature>
+    </featureManager>
+
+  <httpEndpoint host="*" httpPort="${default.http.port}" httpsPort="${default.https.port}" id="defaultHttpEndpoint"/>
+
+
+    <applicationMonitor updateTrigger="mbean"/>
+
+    <webApplication id="microprofile" location="microprofile-1.0-SNAPSHOT.war" name="microprofile"/>
+</server>

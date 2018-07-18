@@ -1,0 +1,350 @@
+------Start of DE processing------ = [6/26/18 12:30:59:776 PDT]
+Exception = com.ibm.ws.microprofile.health.services.HealthCheckBeanCallException
+Source = com.ibm.ws.microprofile.health.services.impl.HealthExecutorImpl
+probeid = 74
+Stack Dump = com.ibm.ws.microprofile.health.services.HealthCheckBeanCallException: org.jboss.weld.context.ContextNotActiveException: WELD-001303: No active contexts for scope type javax.enterprise.context.RequestScoped
+	at com.ibm.ws.microprofile.health.services.impl.HealthCheckCDIBeanInvokerImpl.checkAllBeans(HealthCheckCDIBeanInvokerImpl.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.ibm.ws.context.service.serializable.ContextualInvocationHandler.invoke(ContextualInvocationHandler.java:76)
+	at com.ibm.ws.context.service.serializable.ContextualInvocationHandler.invoke(ContextualInvocationHandler.java:97)
+	at com.sun.proxy.$Proxy68.checkAllBeans(Unknown Source)
+	at com.ibm.ws.microprofile.health.services.impl.HealthExecutorImpl.runHealthChecks(HealthExecutorImpl.java:73)
+	at com.ibm.ws.microprofile.health.internal.HealthCheckServiceImpl.performHealthCheck(HealthCheckServiceImpl.java:107)
+	at com.ibm.ws.microprofile.health.internal.servlet.HealthCheckServlet.service(HealthCheckServlet.java:53)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1255)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:743)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:440)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:143)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:89)
+	at com.ibm.ws.app.manager.wab.internal.OsgiDirectoryProtectionFilter.doFilter(OsgiDirectoryProtectionFilter.java:90)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:201)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:86)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:995)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1124)
+	at com.ibm.ws.webcontainer.webapp.WebApp.handleRequest(WebApp.java:4962)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.handleRequest(DynamicVirtualHost.java:314)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:995)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:279)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:957)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:357)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:316)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:499)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:433)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:313)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.ready(HttpInboundLink.java:284)
+	at com.ibm.ws.tcpchannel.internal.NewConnectionInitialReadCallback.sendToDiscriminators(NewConnectionInitialReadCallback.java:165)
+	at com.ibm.ws.tcpchannel.internal.NewConnectionInitialReadCallback.complete(NewConnectionInitialReadCallback.java:74)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:501)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:571)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:926)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1015)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.jboss.weld.context.ContextNotActiveException: WELD-001303: No active contexts for scope type javax.enterprise.context.RequestScoped
+	at org.jboss.weld.manager.BeanManagerImpl.getContext(BeanManagerImpl.java:732)
+	at org.jboss.weld.bean.ContextualInstanceStrategy$DefaultContextualInstanceStrategy.getIfExists(ContextualInstanceStrategy.java:89)
+	at org.jboss.weld.bean.ContextualInstanceStrategy$CachingContextualInstanceStrategy.getIfExists(ContextualInstanceStrategy.java:164)
+	at org.jboss.weld.bean.ContextualInstance.getIfExists(ContextualInstance.java:63)
+	at org.jboss.weld.bean.proxy.ContextBeanInstance.getInstance(ContextBeanInstance.java:83)
+	at org.jboss.weld.bean.proxy.ProxyMethodHandler.getInstance(ProxyMethodHandler.java:125)
+	at application.microprofile.web.BookEndpointConfig$Proxy$_$$_WeldClientProxy.isInMaintenance(Unknown Source)
+	at application.microprofile.HealthEndpoint.isHealthy(HealthEndpoint.java:38)
+	at application.microprofile.HealthEndpoint.call(HealthEndpoint.java:57)
+	at application.microprofile.HealthEndpoint$Proxy$_$$_WeldClientProxy.call(Unknown Source)
+	at com.ibm.ws.microprofile.health.services.impl.HealthCheckCDIBeanInvokerImpl.checkAllBeans(HealthCheckCDIBeanInvokerImpl.java:57)
+	... 41 more
+
+Dump of callerThis
+Object type = com.ibm.ws.microprofile.health.services.impl.HealthExecutorImpl
+  appModuleContextService = class com.ibm.ws.microprofile.health.services.impl.AppModuleContextService@fef635c
+    metaDataIdentifierService = class com.ibm.ws.container.service.metadata.internal.MetaDataServiceImpl@6cbb13d6
+      applicationMetaDataManager = class com.ibm.ws.container.service.metadata.internal.ApplicationMetaDataManager@105919db
+      moduleMetaDataManager = class com.ibm.ws.container.service.metadata.internal.ModuleMetaDataManager@21da84cb
+      componentMetaDataManager = class com.ibm.ws.container.service.metadata.internal.ComponentMetaDataManager@1c344b1e
+      methodMetaDataManager = class com.ibm.ws.container.service.metadata.internal.MethodMetaDataManager@71a6a364
+      appModuleNameToModuleContainer = class java.util.concurrent.ConcurrentHashMap@29e9fb4a
+      jeeNameToComponentMetaData = class java.util.concurrent.ConcurrentHashMap@5ce0ce60
+      deferredMetaDataFactories = class com.ibm.wsspi.kernel.service.utils.ConcurrentServiceReferenceSet@62321259
+      deferredMetaDataInitializers = class com.ibm.wsspi.kernel.service.utils.ConcurrentServiceReferenceMap@26cb30f8
+      serialVersionUID = -2494605732980966097
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@587d311
+    classLoaderIdentifierService = class com.ibm.ws.classloading.internal.ClassLoadingServiceImpl@5aa5b88e
+      tc = class com.ibm.websphere.ras.TraceComponent@3fb7b274
+      leakDetectionMap = class java.util.HashMap@4f0cd6
+      TCCL_LOCK_WAIT = 15000
+      REFERENCE_GENERATORS = "generators"
+      bundleContext = class org.eclipse.osgi.internal.framework.BundleContextImpl@69aeda6
+      aclStore = class com.ibm.ws.classloading.internal.util.CanonicalStore@53015fbe
+      tcclStore = class com.ibm.ws.classloading.internal.util.CanonicalStore@b10c568
+      tcclStoreLock = class java.util.concurrent.locks.ReentrantLock@48f21b9f
+      digraph = class org.eclipse.equinox.internal.region.StandardRegionDigraph@30a397eb
+      redefiner = class com.ibm.ws.classloading.internal.util.ClassRedefiner@6986d2ee
+      listener = class com.ibm.ws.classloading.internal.ClassLoadingServiceImpl$1@64306133
+      classloaders = class java.util.Collections$SynchronizedMap@3c46b0c9
+      resourceProviders = class com.ibm.ws.classloading.internal.CompositeResourceProvider@10f67465
+      rememberedBundles = class java.util.concurrent.ConcurrentHashMap@4fb8c537
+      collectedBundles = class java.lang.ref.ReferenceQueue@28e60c0a
+      generatorRefs = class com.ibm.wsspi.kernel.service.utils.ConcurrentServiceReferenceSet@21af3127
+      generatorManager = class com.ibm.ws.classloading.internal.ClassGeneratorManager@2592c2b
+      appExtLibs = class java.util.concurrent.CopyOnWriteArrayList@b41c02a
+      metaInfServicesProviders = class java.util.concurrent.ConcurrentHashMap@13df0b14
+      metaInfServicesRefs = class com.ibm.wsspi.kernel.service.utils.ConcurrentServiceReferenceMap@4b213641
+      protectionDomainMap = class java.util.HashMap@d2737a
+      metadataIdentifierService = class com.ibm.ws.container.service.metadata.internal.MetaDataServiceImpl@6cbb13d6
+      serialVersionUID = 3750725462702355330
+    contextService = class com.ibm.ws.context.service.serializable.ThreadContextManager@7c57acc1
+      COMPONENT_NAME = "component.name"
+      alwaysEnabled = class java.util.Collections$SetFromMap@7155a902
+      metadataIdentifierService = class com.ibm.ws.container.service.metadata.internal.MetaDataServiceImpl@6cbb13d6
+      threadContextProviders = class com.ibm.wsspi.kernel.service.utils.ConcurrentServiceReferenceMap@7e3d9195
+      serialVersionUID = 3513608484245697656
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@36918c59
+    jeeMetaDataContextProvider = class com.ibm.ws.javaee.metadata.context.internal.JEEMetadataContextProviderImpl@10576785
+      componentMetadataDecoratorRefs = class com.ibm.wsspi.kernel.service.utils.ConcurrentServiceReferenceMap@55f17496
+      metadataIdentifierService = class com.ibm.ws.container.service.metadata.internal.MetaDataServiceImpl@6cbb13d6
+      serialVersionUID = -2732463529342838032
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@69907143
+    classLoaderContextProvider = class com.ibm.ws.classloader.context.internal.ClassloaderContextProviderImpl@790f7e78
+      classLoaderIdentifierService = class com.ibm.ws.classloading.internal.ClassLoadingServiceImpl@5aa5b88e
+      serialVersionUID = 8831900865066815314
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@22ba8169
+    CapturedContexts = interface java.util.Map[3]
+      Map[0] = class java.util.Collections$SingletonMap@32812dd9
+      Map[1] = class java.util.Collections$SingletonMap@7e550bd4
+      Map[2] = class java.util.Collections$SingletonMap@1628b6af
+    serialVersionUID = -3466757775991707204
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@1082fcc4
+      strings[0] = "TraceComponent[com.ibm.ws.microprofile.health.services.impl.AppModuleContextService,class com.ibm.ws.microprofile.health.services.impl.AppModuleContextService,[HEALTH],com.ibm.ws.microprofile.health.resources.Health,null]"
+  healthCheckCDIBeanInvoker = class com.ibm.ws.microprofile.health.services.impl.HealthCheckCDIBeanInvokerImpl@7274577
+    tc = class com.ibm.ejs.ras.TraceComponent@410a9326
+      strings[0] = "TraceComponent[com.ibm.ws.microprofile.health.services.impl.HealthCheckCDIBeanInvokerImpl,class com.ibm.ws.microprofile.health.services.impl.HealthCheckCDIBeanInvokerImpl,[],null,null]"
+    serialVersionUID = -6904456700224442077
+  j2eeNameFactory = class com.ibm.ws.container.service.metadata.internal.J2EENameFactoryImpl@1d5d6d8d
+    serialVersionUID = 3486344295038028821
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@7028ecd7
+      strings[0] = "TraceComponent[com.ibm.ws.container.service.metadata.internal.J2EENameFactoryImpl,class com.ibm.ws.container.service.metadata.internal.J2EENameFactoryImpl,[Runtime],,null]"
+  logger = class com.ibm.ws.logging.internal.WsLogger@75578c33
+    tc = class com.ibm.websphere.ras.TraceComponent@3b81d706
+      strings[0] = "TraceComponent[com.ibm.ws.logging.internal.WsLogger,class com.ibm.ws.logging.internal.WsLogger,[logging],com.ibm.ws.logging.internal.resources.LoggingMessages,null]"
+    ivCachedResourceBundleName = null
+    ivCachedResourceBundle = null
+    ivComponent = null
+    ivOrganization = null
+    ivProduct = null
+    ivMinimumLocalizationLevelIntValue = 625
+    ivTC = class com.ibm.websphere.ras.TraceComponent@289a4b51
+      strings[0] = "TraceComponent[com.ibm.ws.microprofile.health.services.impl.HealthExecutorImpl,class com.ibm.ws.microprofile.health.services.impl.HealthExecutorImpl,[com.ibm.ws.microprofile.health.services.impl.HealthExecutorImpl],null,null]"
+    loggerRegistrationComponent = class java.lang.ThreadLocal@119cdd72
+      threadLocalHashCode = -978983473
+      nextHashCode = class java.util.concurrent.atomic.AtomicInteger@7fd50e15
+      HASH_INCREMENT = 1640531527
+    emptyHandlers = class java.util.logging.Handler[0]
+    offValue = 2147483647
+    SYSTEM_LOGGER_RB_NAME = "sun.util.logging.resources.logging"
+    SYSTEM_BUNDLE = class java.util.logging.Logger$LoggerBundle@6e0e9b3e
+      resourceBundleName = "sun.util.logging.resources.logging"
+      userBundle = null
+    NO_RESOURCE_BUNDLE = class java.util.logging.Logger$LoggerBundle@2988eb8a
+      resourceBundleName = null
+      userBundle = null
+    manager = class com.ibm.ws.kernel.boot.logging.WsLogManager@5e08d484
+      CLASS_NAME = "com.ibm.ws.kernel.boot.logging.WsLogManager"
+      CONFIGURE_BY_SERVER_PROPERTY_NAME = "java.util.logging.configureByServer"
+      CONFIGURE_BY_LOGGING_PROPERTIES_FILE = "java.util.logging.configureByLoggingPropertiesFile"
+      configureByServer = true
+      configureByLoggingProperties = false
+      wsLogger = class java.lang.reflect.Constructor@79d393dd
+      resetEnabled = true
+      manager = class com.ibm.ws.kernel.boot.logging.WsLogManager@5e08d484
+      props = class java.util.Properties@736e34da
+      defaultLevel = class java.util.logging.Level@68c6a31e
+      listenerMap = class java.util.HashMap@2bbdf622
+      systemContext = class java.util.logging.LogManager$SystemLoggerContext@4e95d5f3
+      userContext = class java.util.logging.LogManager$LoggerContext@79818332
+      rootLogger = class java.util.logging.LogManager$RootLogger@7bcbb03c
+      readPrimordialConfiguration = true
+      initializedGlobalHandlers = true
+      deathImminent = false
+      initializedCalled = true
+      initializationDone = true
+      contextsMap = null
+      loggerRefQueue = class java.lang.ref.ReferenceQueue@3f835581
+      MAX_ITERATIONS = 400
+      controlPermission = class java.util.logging.LoggingPermission@5fd925cf
+      loggingMXBean = null
+      LOGGING_MXBEAN_NAME = "java.util.logging:type=Logging"
+      $assertionsDisabled = true
+    name = "com.ibm.ws.microprofile.health.services.impl.HealthExecutorImpl"
+    handlers = class java.util.concurrent.CopyOnWriteArrayList@6b073b0c
+      serialVersionUID = 8673264195747942595
+      lock = class java.util.concurrent.locks.ReentrantLock@232c605d
+      array = class java.lang.Object[0]
+      UNSAFE = class sun.misc.Unsafe@7549305a
+      lockOffset = 12
+    loggerBundle = class java.util.logging.Logger$LoggerBundle@714a8a39
+      resourceBundleName = "com.ibm.ws.microprofile.health.resources.Health"
+      userBundle = null
+    useParentHandlers = true
+    filter = null
+    anonymous = false
+    catalog = class com.ibm.ws.microprofile.health.resources.Health@1ff0fb21
+      resources = class [Ljava.lang.Object;[4]
+      serialVersionUID = 3302440755117670651
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@1e182f7d
+      lookup = null
+      INITIAL_CACHE_SIZE = 32
+      NONEXISTENT_BUNDLE = class java.util.ResourceBundle$1@29d2c968
+      cacheList = class java.util.concurrent.ConcurrentHashMap@3fb376c0
+      referenceQueue = class java.lang.ref.ReferenceQueue@3020e02e
+      parent = null
+      locale = class java.util.Locale@79e0bdd7
+      name = "com.ibm.ws.microprofile.health.resources.Health"
+      expired = false
+      cacheKey = class java.util.ResourceBundle$CacheKey@4646a20a
+      keySet = null
+      providers = null
+      $assertionsDisabled = true
+    catalogName = "com.ibm.ws.microprofile.health.resources.Health"
+    catalogLocale = class java.util.Locale@7c4b0af
+      LOCALECACHE = class java.util.Locale$Cache@517b3da
+      ENGLISH = class java.util.Locale@6efb9fc7
+      FRENCH = class java.util.Locale@2c2a3f67
+      GERMAN = class java.util.Locale@3f70d03b
+      ITALIAN = class java.util.Locale@7413d6c
+      JAPANESE = class java.util.Locale@35f68fe4
+      KOREAN = class java.util.Locale@485a5f3a
+      CHINESE = class java.util.Locale@7112af02
+      SIMPLIFIED_CHINESE = class java.util.Locale@7f364611
+      TRADITIONAL_CHINESE = class java.util.Locale@7e3e6fbc
+      FRANCE = class java.util.Locale@64075cce
+      GERMANY = class java.util.Locale@985f3
+      ITALY = class java.util.Locale@4dc24d2d
+      JAPAN = class java.util.Locale@408c98a6
+      KOREA = class java.util.Locale@1e334d55
+      CHINA = class java.util.Locale@7f364611
+      PRC = class java.util.Locale@7f364611
+      TAIWAN = class java.util.Locale@7e3e6fbc
+      UK = class java.util.Locale@5259657d
+      US = class java.util.Locale@7c4b0af
+      CANADA = class java.util.Locale@d2df13e
+      CANADA_FRENCH = class java.util.Locale@29c01195
+      ROOT = class java.util.Locale@79e0bdd7
+      PRIVATE_USE_EXTENSION = x
+      UNICODE_LOCALE_EXTENSION = u
+      serialVersionUID = 9149081749638150636
+      DISPLAY_LANGUAGE = 0
+      DISPLAY_COUNTRY = 1
+      DISPLAY_VARIANT = 2
+      DISPLAY_SCRIPT = 3
+      baseLocale = class sun.util.locale.BaseLocale@2d9db81d
+      localeExtensions = null
+      hashCodeValue = 96636889
+      defaultLocale = class java.util.Locale@7c4b0af
+      defaultDisplayLocale = null
+      defaultFormatLocale = class java.util.Locale@7c4b0af
+      languageTag = "en-US"
+      serialPersistentFields = class java.io.ObjectStreamField[6]
+      isoLanguages = null
+      isoCountries = null
+      $assertionsDisabled = true
+    treeLock = class java.lang.Object@55493400
+    parent = class java.util.logging.Logger@70f767d2
+      emptyHandlers = class java.util.logging.Handler[0]
+      offValue = 2147483647
+      SYSTEM_LOGGER_RB_NAME = "sun.util.logging.resources.logging"
+      SYSTEM_BUNDLE = class java.util.logging.Logger$LoggerBundle@6e0e9b3e
+      NO_RESOURCE_BUNDLE = class java.util.logging.Logger$LoggerBundle@2988eb8a
+      manager = class com.ibm.ws.kernel.boot.logging.WsLogManager@5e08d484
+      name = ""
+      handlers = class java.util.concurrent.CopyOnWriteArrayList@6d46b1ff
+      loggerBundle = class java.util.logging.Logger$LoggerBundle@2988eb8a
+      useParentHandlers = true
+      filter = null
+      anonymous = false
+      catalog = null
+      catalogName = null
+      catalogLocale = null
+      treeLock = class java.lang.Object@55493400
+      parent = null
+      kids = class java.util.ArrayList@5612a66b
+      levelObject = null
+      levelValue = 800
+      callersClassLoaderRef = null
+      isSystemLogger = false
+      GLOBAL_LOGGER_NAME = "global"
+      global = class java.util.logging.Logger@5650f301
+      $assertionsDisabled = true
+    kids = null
+    levelObject = class java.util.logging.Level@68c6a31e
+      defaultBundle = "sun.util.logging.resources.logging"
+      name = "INFO"
+      value = 800
+      resourceBundleName = "sun.util.logging.resources.logging"
+      localizedLevelName = "INFO"
+      cachedLocale = class java.util.Locale@7c4b0af
+      OFF = class java.util.logging.Level@5aa6d432
+      SEVERE = class java.util.logging.Level@6569a6b
+      WARNING = class java.util.logging.Level@585d0bf3
+      INFO = class java.util.logging.Level@68c6a31e
+      CONFIG = class java.util.logging.Level@6a4319b7
+      FINE = class java.util.logging.Level@6a84789
+      FINER = class java.util.logging.Level@349f00f5
+      FINEST = class java.util.logging.Level@42d8706
+      ALL = class java.util.logging.Level@7651a895
+      serialVersionUID = -8176160795706313070
+    levelValue = 800
+    callersClassLoaderRef = class java.lang.ref.WeakReference@4aa53761
+      referent = class org.eclipse.osgi.internal.loader.EquinoxClassLoader@35188e22
+      queue = class java.lang.ref.ReferenceQueue$Null@3990bf86
+      next = null
+      discovered = null
+      lock = class java.lang.ref.Reference$Lock@611a0631
+      pending = null
+    isSystemLogger = false
+    GLOBAL_LOGGER_NAME = "global"
+    global = class java.util.logging.Logger@5650f301
+      emptyHandlers = class java.util.logging.Handler[0]
+      offValue = 2147483647
+      SYSTEM_LOGGER_RB_NAME = "sun.util.logging.resources.logging"
+      SYSTEM_BUNDLE = class java.util.logging.Logger$LoggerBundle@6e0e9b3e
+      NO_RESOURCE_BUNDLE = class java.util.logging.Logger$LoggerBundle@2988eb8a
+      manager = class com.ibm.ws.kernel.boot.logging.WsLogManager@5e08d484
+      name = "global"
+      handlers = class java.util.concurrent.CopyOnWriteArrayList@62e7d974
+      loggerBundle = class java.util.logging.Logger$LoggerBundle@2988eb8a
+      useParentHandlers = true
+      filter = null
+      anonymous = false
+      catalog = null
+      catalogName = null
+      catalogLocale = null
+      treeLock = class java.lang.Object@55493400
+      parent = class java.util.logging.Logger@70f767d2
+      kids = null
+      levelObject = null
+      levelValue = 800
+      callersClassLoaderRef = null
+      isSystemLogger = true
+      GLOBAL_LOGGER_NAME = "global"
+      global = class java.util.logging.Logger@5650f301
+      $assertionsDisabled = true
+    $assertionsDisabled = true
+  MANAGEDTASK_IDENTITY_NAME = "javax.enterprise.concurrent.IDENTITY_NAME"
+  HC_MANAGEDTASK_IDENTITY_NAME = "mp.healthcheck.proxy"
+  HC_TASK_OWNER = "mp.healthcheck.runtime"
+  ONLY_WAR_EJB_NOT_SUPPORTED = null
+  serialVersionUID = 5321437450143732744
+
+Dump of objectArray[0]
+Object type = java.lang.String
+  String value = "microprofile"
+
+Dump of objectArray[1]
+Object type = java.lang.String
+  String value = "microprofile-1.0-SNAPSHOT.war"
+

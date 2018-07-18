@@ -1,0 +1,10 @@
+/home/ibmdemo/workspace-microprofile/microprofile/src/main/java/application/microprofile/repo/BookManager.java
+/home/ibmdemo/workspace-microprofile/microprofile/src/main/java/application/microprofile/RootEndpoint.java
+/home/ibmdemo/workspace-microprofile/microprofile/src/main/java/application/microprofile/model/Book.java
+/home/ibmdemo/workspace-microprofile/microprofile/src/main/java/application/microprofile/providers/BookMessageBodyWriter.java
+/home/ibmdemo/workspace-microprofile/microprofile/src/main/java/application/microprofile/web/BookEndpoint.java
+/home/ibmdemo/workspace-microprofile/microprofile/src/main/java/application/microprofile/util/BookMapper.java
+/home/ibmdemo/workspace-microprofile/microprofile/src/main/java/application/microprofile/providers/BookListMessageBodyWriter.java
+/home/ibmdemo/workspace-microprofile/microprofile/src/main/java/application/microprofile/providers/BookMessageBodyReader.java
+/home/ibmdemo/workspace-microprofile/microprofile/src/main/java/application/microprofile/JaxrsApplication.java
+/home/ibmdemo/workspace-microprofile/microprofile/src/main/java/application/microprofile/HealthEndpoint.java

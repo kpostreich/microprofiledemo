@@ -1,0 +1,10 @@
+
+ Index  Count  Time of first Occurrence    Time of last Occurrence     Exception SourceId ProbeId
+------+------+---------------------------+---------------------------+---------------------------
+     0     19     6/28/18 8:00:28:662 PDT     6/28/18 8:09:05:214 PDT java.lang.RuntimeException com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters 1105
+                                                                            - /home/ibmdemo/Student/workspace/microprofile/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_18.06.28_08.00.28.0.log
+     1      1     6/28/18 8:03:56:802 PDT     6/28/18 8:03:56:802 PDT org.eclipse.microprofile.faulttolerance.exceptions.TimeoutException com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters 1105
+                                                                            - /home/ibmdemo/Student/workspace/microprofile/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_18.06.28_08.03.56.0.log
+     2     50     6/28/18 8:06:35:331 PDT     6/28/18 8:08:55:252 PDT org.eclipse.microprofile.faulttolerance.exceptions.CircuitBreakerOpenException com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters 1105
+                                                                            - /home/ibmdemo/Student/workspace/microprofile/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_18.06.28_08.06.35.0.log
+------+------+---------------------------+---------------------------+---------------------------

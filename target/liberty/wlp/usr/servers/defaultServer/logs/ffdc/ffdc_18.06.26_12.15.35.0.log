@@ -1,0 +1,519 @@
+------Start of DE processing------ = [6/26/18 12:15:35:551 PDT]
+Exception = java.lang.IllegalStateException
+Source = com.ibm.ws.artifact.loose.internal.LooseArtifactNotifier
+probeid = 383
+Stack Dump = java.lang.IllegalStateException: The service has been unregistered
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.unregister(ServiceRegistrationImpl.java:206)
+	at com.ibm.ws.artifact.loose.internal.LooseArtifactNotifier.updateNonRecurseFileMonitorService(LooseArtifactNotifier.java:382)
+	at com.ibm.ws.artifact.loose.internal.LooseArtifactNotifier.updateFileMonitorService(LooseArtifactNotifier.java:290)
+	at com.ibm.ws.artifact.loose.internal.LooseArtifactNotifier.processMonitoredPathList(LooseArtifactNotifier.java:238)
+	at com.ibm.ws.artifact.loose.internal.LooseArtifactNotifier.removeListener(LooseArtifactNotifier.java:265)
+	at com.ibm.ws.artifact.overlay.internal.DirectoryBasedOverlayNotifier.removeListener(DirectoryBasedOverlayNotifier.java:176)
+	at com.ibm.ws.adaptable.module.internal.NotifierImpl.removeListener(NotifierImpl.java:87)
+	at com.ibm.ws.app.manager.internal.monitor.ApplicationMonitor$BaseApplicationListener.stop(ApplicationMonitor.java:364)
+	at com.ibm.ws.app.manager.internal.monitor.ApplicationMonitor$BaseApplicationListener.access$300(ApplicationMonitor.java:321)
+	at com.ibm.ws.app.manager.internal.monitor.ApplicationMonitor$ApplicationListeners.stopListeners(ApplicationMonitor.java:239)
+	at com.ibm.ws.app.manager.internal.monitor.ApplicationMonitor$ApplicationListeners.access$000(ApplicationMonitor.java:201)
+	at com.ibm.ws.app.manager.internal.monitor.ApplicationMonitor.deactivate(ApplicationMonitor.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.felix.scr.impl.inject.BaseMethod.invokeMethod(BaseMethod.java:224)
+	at org.apache.felix.scr.impl.inject.BaseMethod.access$500(BaseMethod.java:39)
+	at org.apache.felix.scr.impl.inject.BaseMethod$Resolved.invoke(BaseMethod.java:617)
+	at org.apache.felix.scr.impl.inject.BaseMethod.invoke(BaseMethod.java:501)
+	at org.apache.felix.scr.impl.inject.ActivateMethod.invoke(ActivateMethod.java:302)
+	at org.apache.felix.scr.impl.inject.ActivateMethod.invoke(ActivateMethod.java:294)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.disposeImplementationObject(SingleComponentManager.java:344)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.deleteComponent(SingleComponentManager.java:153)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.doDeactivate(AbstractComponentManager.java:814)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.deactivateInternal(AbstractComponentManager.java:788)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.dispose(AbstractComponentManager.java:580)
+	at org.apache.felix.scr.impl.manager.ConfigurableComponentHolder.disposeComponents(ConfigurableComponentHolder.java:706)
+	at org.apache.felix.scr.impl.BundleComponentActivator.dispose(BundleComponentActivator.java:523)
+	at org.apache.felix.scr.impl.Activator.disposeComponents(Activator.java:439)
+	at org.apache.felix.scr.impl.Activator.access$300(Activator.java:54)
+	at org.apache.felix.scr.impl.Activator$ScrExtension.destroy(Activator.java:293)
+	at org.apache.felix.utils.extender.AbstractExtender$2.run(AbstractExtender.java:285)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.felix.utils.extender.AbstractExtender.destroyExtension(AbstractExtender.java:307)
+	at org.apache.felix.utils.extender.AbstractExtender.bundleChanged(AbstractExtender.java:181)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:908)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.osgi.internal.framework.EquinoxEventPublisher.publishBundleEventPrivileged(EquinoxEventPublisher.java:213)
+	at org.eclipse.osgi.internal.framework.EquinoxEventPublisher.publishBundleEvent(EquinoxEventPublisher.java:120)
+	at org.eclipse.osgi.internal.framework.EquinoxEventPublisher.publishBundleEvent(EquinoxEventPublisher.java:112)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor.publishModuleEvent(EquinoxContainerAdaptor.java:168)
+	at org.eclipse.osgi.container.Module.publishEvent(Module.java:476)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:634)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1675)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1594)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:748)
+
+Dump of callerThis
+Object type = com.ibm.ws.artifact.loose.internal.LooseArtifactNotifier
+  root = class com.ibm.ws.artifact.loose.internal.LooseArchive@66ba0d46
+    cacheDir = class java.io.File@5eb1804
+      fs = class java.io.UnixFileSystem@45e1725f
+      path = "/home/ibmdemo/Student/workspace/microprofile/target/liberty/wlp/usr/servers/defaultServer/workarea/org.eclipse.osgi/59/data/cache/com.ibm.ws.app.manager_20"
+      status = class java.io.File$PathStatus@29ab69a9
+      prefixLength = 1
+      separatorChar = /
+      separator = "/"
+      pathSeparatorChar = :
+      pathSeparator = ":"
+      PATH_OFFSET = 16
+      PREFIX_LENGTH_OFFSET = 12
+      UNSAFE = class sun.misc.Unsafe@3a25dda0
+      serialVersionUID = 301077366599181567
+      filePath = null
+      $assertionsDisabled = true
+    xmlFile = class java.io.File@2a6d5244
+      fs = class java.io.UnixFileSystem@45e1725f
+      path = "/home/ibmdemo/Student/workspace/microprofile/target/liberty/wlp/usr/servers/defaultServer/apps/microprofile-1.0-SNAPSHOT.war.xml"
+      status = class java.io.File$PathStatus@29ab69a9
+      prefixLength = 1
+      separatorChar = /
+      separator = "/"
+      pathSeparatorChar = :
+      pathSeparator = ":"
+      PATH_OFFSET = 16
+      PREFIX_LENGTH_OFFSET = 12
+      UNSAFE = class sun.misc.Unsafe@3a25dda0
+      serialVersionUID = 301077366599181567
+      filePath = null
+      $assertionsDisabled = true
+    parent = null
+    cfh = class com.ibm.ws.artifact.loose.internal.LooseContainerFactoryHelper@19ac78c7
+      locationService = class com.ibm.ws.kernel.service.location.internal.WsLocationAdminImpl@13a83c3a
+      containerFactoryReference = class com.ibm.wsspi.kernel.service.utils.AtomicServiceReference@1ced7550
+      ctx = class org.eclipse.osgi.internal.framework.BundleContextImpl@3bab0567
+      tc = class com.ibm.websphere.ras.TraceComponent@761d788d
+      serialVersionUID = -6436244972857197695
+    pathInParent = null
+    _entries = class java.util.ArrayList@47697b18
+    tc = class com.ibm.websphere.ras.TraceComponent@35244732
+      strings[0] = "TraceComponent[com.ibm.ws.artifact.loose.internal.LooseArchive,class com.ibm.ws.artifact.loose.internal.LooseArchive,[archive.artifact.xml],com.ibm.ws.artifact.loose.internal.resources.LooseApiMessages,null]"
+    artifactNotifier = class com.ibm.ws.artifact.loose.internal.LooseArtifactNotifier@75907902
+    serialVersionUID = 345486831272892625
+  entries = class java.util.ArrayList@47697b18
+    serialVersionUID = 8683452581122892189
+    DEFAULT_CAPACITY = 10
+    EMPTY_ELEMENTDATA = class java.lang.Object[0]
+    DEFAULTCAPACITY_EMPTY_ELEMENTDATA = class java.lang.Object[0]
+    elementData = class java.lang.Object[10]
+      Object[0] = class com.ibm.ws.artifact.loose.internal.LooseArchive$DirEntryInfo@6013e822
+      Object[1] = class com.ibm.ws.artifact.loose.internal.LooseArchive$DirEntryInfo@17234685
+      Object[2] = class com.ibm.ws.artifact.loose.internal.LooseArchive$DirEntryInfo@4fb3c4
+      Object[3] = null
+      Object[4] = null
+      Object[5] = null
+      Object[6] = null
+      Object[7] = null
+      Object[8] = null
+      Object[9] = null
+    size = 3
+    MAX_ARRAY_SIZE = 2147483639
+    modCount = 3
+    MAX_ARRAY_SIZE = 2147483639
+  serviceProperties = class java.util.Hashtable@458dafa6
+    table = class java.util.Hashtable$Entry[11]
+      Entry[0] = class java.util.Hashtable$Entry@3482d433
+      Entry[1] = null
+      Entry[2] = null
+      Entry[3] = null
+      Entry[4] = null
+      Entry[5] = class java.util.Hashtable$Entry@49ae80f4
+      Entry[6] = class java.util.Hashtable$Entry@2732cb16
+      Entry[7] = class java.util.Hashtable$Entry@5b81e279
+      Entry[8] = class java.util.Hashtable$Entry@79008676
+      Entry[9] = class java.util.Hashtable$Entry@44941082
+      Entry[10] = class java.util.Hashtable$Entry@75cf197d
+    count = 8
+    threshold = 8
+    loadFactor = 0.75
+    modCount = 8
+    serialVersionUID = 1421746759512286392
+    MAX_ARRAY_SIZE = 2147483639
+    keySet = null
+    entrySet = null
+    values = null
+    KEYS = 0
+    VALUES = 1
+    ENTRIES = 2
+  nonRecurseServiceProperties = class java.util.Hashtable@473c624c
+    table = class java.util.Hashtable$Entry[11]
+      Entry[0] = class java.util.Hashtable$Entry@52f78ca1
+      Entry[1] = null
+      Entry[2] = null
+      Entry[3] = null
+      Entry[4] = null
+      Entry[5] = class java.util.Hashtable$Entry@188de8bd
+      Entry[6] = class java.util.Hashtable$Entry@7bb24afb
+      Entry[7] = class java.util.Hashtable$Entry@5f5c48c2
+      Entry[8] = class java.util.Hashtable$Entry@3120550c
+      Entry[9] = class java.util.Hashtable$Entry@469f8b95
+      Entry[10] = class java.util.Hashtable$Entry@2f13e42f
+    count = 8
+    threshold = 8
+    loadFactor = 0.75
+    modCount = 8
+    serialVersionUID = 1421746759512286392
+    MAX_ARRAY_SIZE = 2147483639
+    keySet = null
+    entrySet = null
+    values = null
+    KEYS = 0
+    VALUES = 1
+    ENTRIES = 2
+  interval = 500
+  notificationType = "external"
+  ctx = class org.eclipse.osgi.internal.framework.BundleContextImpl@3bab0567
+    findHookName = "org.osgi.framework.hooks.bundle.FindHook"
+    valid = false
+    bundle = class org.eclipse.osgi.internal.framework.EquinoxBundle@4caa961d
+      equinoxContainer = class org.eclipse.osgi.internal.framework.EquinoxContainer@571e5a08
+      module = class org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule@f7f9b8e
+      monitor = class java.lang.Object@2109bf97
+      context = null
+      signerInfos = null
+      $SWITCH_TABLE$org$eclipse$osgi$container$Module$State = {1,2,3,4,5,6,7} /* array length = 7 */
+    container = class org.eclipse.osgi.internal.framework.EquinoxContainer@571e5a08
+      NAME = "org.eclipse.osgi"
+      secureAction = class org.eclipse.osgi.framework.util.SecureAction@14d5a48
+      equinoxConfig = class org.eclipse.osgi.internal.framework.EquinoxConfiguration@527edb70
+      logServices = class org.eclipse.osgi.internal.log.EquinoxLogServices@4695a46b
+      storage = class org.eclipse.osgi.storage.Storage@41e6d7be
+      packageAdmin = class org.eclipse.osgi.internal.framework.legacy.PackageAdminImpl@2a924ad0
+      startLevel = class org.eclipse.osgi.internal.framework.legacy.StartLevelImpl@e13b1a9
+      bootDelegation = class java.util.HashSet@65cefafc
+      bootDelegationStems = class java.lang.String[12]
+      bootDelegateAll = false
+      isProcessClassRecursionSupportedByAll = false
+      eventPublisher = class org.eclipse.osgi.internal.framework.EquinoxEventPublisher@24c22fe
+      monitor = class java.lang.Object@2a1e968a
+      serviceRegistry = class org.eclipse.osgi.internal.serviceregistry.ServiceRegistry@7bcb581b
+      contextFinder = class org.eclipse.osgi.internal.framework.ContextFinder@7fdcd041
+      signedContentFactory = class org.osgi.util.tracker.ServiceTracker@3913f499
+      executor = class java.util.concurrent.ScheduledThreadPoolExecutor@2b18e05d
+      storageSaver = class org.eclipse.osgi.internal.framework.StorageSaver@2daaab88
+    debug = class org.eclipse.osgi.internal.debug.Debug@1443100d
+      ECLIPSE_OSGI = "org.eclipse.osgi"
+      OPTION_DEBUG_GENERAL = "org.eclipse.osgi/debug"
+      OPTION_DEBUG_BUNDLE_TIME = "org.eclipse.osgi/debug/bundleTime"
+      OPTION_DEBUG_LOADER = "org.eclipse.osgi/debug/loader"
+      OPTION_DEBUG_STORAGE = "org.eclipse.osgi/debug/storage"
+      OPTION_DEBUG_EVENTS = "org.eclipse.osgi/debug/events"
+      OPTION_DEBUG_SERVICES = "org.eclipse.osgi/debug/services"
+      OPTION_DEBUG_HOOKS = "org.eclipse.osgi/debug/hooks"
+      OPTION_DEBUG_MANIFEST = "org.eclipse.osgi/debug/manifest"
+      OPTION_DEBUG_FILTER = "org.eclipse.osgi/debug/filter"
+      OPTION_DEBUG_SECURITY = "org.eclipse.osgi/debug/security"
+      OPTION_DEBUG_STARTLEVEL = "org.eclipse.osgi/debug/startlevel"
+      OPTION_DEBUG_PACKAGEADMIN = "org.eclipse.osgi/debug/packageadmin"
+      OPTION_DEBUG_PACKAGEADMIN_TIMING = "org.eclipse.osgi/debug/packageadmin/timing"
+      OPTION_MONITOR_ACTIVATION = "org.eclipse.osgi/monitor/activation"
+      OPTION_MONITOR_LAZY = "org.eclipse.osgi/monitor/lazy"
+      OPTION_DEBUG_MESSAGE_BUNDLES = "org.eclipse.osgi/debug/messageBundles"
+      OPTION_DEBUG_LOCATION = "org.eclipse.osgi/debug/location"
+      OPTION_CACHED_MANIFEST = "org.eclipse.osgi/debug/cachedmanifest"
+      OPTION_DEBUG_SYSTEM_BUNDLE = "org.eclipse.osgi/debug/systemBundle"
+      DEBUG_GENERAL = false
+      DEBUG_BUNDLE_TIME = false
+      DEBUG_LOADER = false
+      DEBUG_STORAGE = false
+      DEBUG_EVENTS = false
+      DEBUG_SERVICES = false
+      DEBUG_HOOKS = false
+      DEBUG_MANIFEST = false
+      DEBUG_FILTER = false
+      DEBUG_SECURITY = false
+      DEBUG_STARTLEVEL = false
+      DEBUG_PACKAGEADMIN = false
+      DEBUG_PACKAGEADMIN_TIMING = false
+      DEBUG_MESSAGE_BUNDLES = false
+      MONITOR_ACTIVATION = false
+      DEBUG_LOCATION = false
+      DEBUG_CACHED_MANIFEST = false
+      DEBUG_SYSTEM_BUNDLE = false
+      out = class com.ibm.ws.logging.internal.impl.BaseTraceService$TeePrintStream@6da82fbe
+    servicesInUse = null
+    activator = null
+    contextLock = class java.lang.Object@57251190
+  service = null
+  nonRecurseService = class org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl@7c6b8984
+    registry = class org.eclipse.osgi.internal.serviceregistry.ServiceRegistry@7bcb581b
+      SERVICEEVENT = 3
+      findHookName = "org.osgi.framework.hooks.service.FindHook"
+      eventHookName = "org.osgi.framework.hooks.service.EventHook"
+      eventListenerHookName = "org.osgi.framework.hooks.service.EventListenerHook"
+      listenerHookName = "org.osgi.framework.hooks.service.ListenerHook"
+      publishedServicesByClass = class java.util.HashMap@1fd4776c
+      allPublishedServices = class java.util.ArrayList@236b44f0
+      publishedServicesByContext = class java.util.HashMap@305fa66
+      serviceid = 590
+      serviceEventListeners = class java.util.HashMap@6a536e52
+      initialCapacity = 50
+      initialSubCapacity = 10
+      container = class org.eclipse.osgi.internal.framework.EquinoxContainer@571e5a08
+      systemBundleContext = class org.eclipse.osgi.internal.framework.BundleContextImpl@59e2d8e3
+      debug = class org.eclipse.osgi.internal.debug.Debug@1443100d
+      $assertionsDisabled = true
+    context = class org.eclipse.osgi.internal.framework.BundleContextImpl@3bab0567
+    bundle = class org.eclipse.osgi.internal.framework.EquinoxBundle@4caa961d
+    clazzes = class java.lang.String[1]
+      String[0] = "com.ibm.wsspi.kernel.filemonitor.FileMonitor"
+    service = class com.ibm.ws.artifact.loose.internal.LooseArtifactNotifier@75907902
+    reference = null
+    contextsUsing = class java.util.ArrayList@1a246320
+      serialVersionUID = 8683452581122892189
+      DEFAULT_CAPACITY = 10
+      EMPTY_ELEMENTDATA = class java.lang.Object[0]
+      DEFAULTCAPACITY_EMPTY_ELEMENTDATA = class java.lang.Object[0]
+      elementData = class java.lang.Object[10]
+      size = 0
+      MAX_ARRAY_SIZE = 2147483639
+      modCount = 3
+      MAX_ARRAY_SIZE = 2147483639
+    properties = class java.util.Collections$UnmodifiableMap@7fa4b328
+      serialVersionUID = -1034234728574286014
+      m = class org.eclipse.osgi.internal.serviceregistry.ServiceProperties@2ccadeea
+      keySet = null
+      entrySet = null
+      values = null
+    serviceid = 583
+    serviceranking = 0
+    registrationLock = class java.lang.Object@7294dd
+    state = 2
+    REGISTERED = 0
+    UNREGISTERING = 1
+    UNREGISTERED = 2
+    FRAMEWORK_SET_SERVICE_PROPERTIES_COUNT = 4
+    $assertionsDisabled = true
+  filesToMonitor = class java.util.TreeMap@b65f6df
+    comparator = class com.ibm.wsspi.kernel.service.utils.PathUtils$PathComparator@3c1ff708
+      serialVersionUID = 8845848986582493462
+      PATH_SEPARATOR = /
+      CMP_LT = -1
+      CMP_GT = 1
+    root = class java.util.TreeMap$Entry@22cc5617
+      key = "/"
+      value = class java.util.HashSet@12b4b357
+      left = null
+      right = class java.util.TreeMap$Entry@218f0c38
+      parent = null
+      color = true
+    size = 2
+    modCount = 2
+    entrySet = null
+    navigableKeySet = null
+    descendingMap = null
+    UNBOUNDED = class java.lang.Object@3364c9fc
+    RED = false
+    BLACK = true
+    serialVersionUID = 919286545866124006
+    keySet = null
+    values = null
+  filesBeingMonitored = class java.util.HashSet@12c40e25
+    serialVersionUID = -5024744406713321676
+    map = class java.util.HashMap@4ba49254
+      serialVersionUID = 362498820763181265
+      DEFAULT_INITIAL_CAPACITY = 16
+      MAXIMUM_CAPACITY = 1073741824
+      DEFAULT_LOAD_FACTOR = 0.75
+      TREEIFY_THRESHOLD = 8
+      UNTREEIFY_THRESHOLD = 6
+      MIN_TREEIFY_CAPACITY = 64
+      table = class java.util.HashMap$Node[16]
+      entrySet = null
+      size = 0
+      modCount = 23
+      threshold = 12
+      loadFactor = 0.75
+      keySet = class java.util.HashMap$KeySet@6945ff3d
+      values = null
+    PRESENT = class java.lang.Object@70628575
+    MAX_ARRAY_SIZE = 2147483639
+  dirsToMonitor = class java.util.TreeMap@3a1c7344
+    comparator = class com.ibm.wsspi.kernel.service.utils.PathUtils$PathComparator@2856c367
+      serialVersionUID = 8845848986582493462
+      PATH_SEPARATOR = /
+      CMP_LT = -1
+      CMP_GT = 1
+    root = class java.util.TreeMap$Entry@588cf71a
+      key = "/"
+      value = class java.util.HashSet@4fc0be1c
+      left = null
+      right = class java.util.TreeMap$Entry@4ab52d2a
+      parent = null
+      color = true
+    size = 2
+    modCount = 2
+    entrySet = null
+    navigableKeySet = null
+    descendingMap = null
+    UNBOUNDED = class java.lang.Object@3364c9fc
+    RED = false
+    BLACK = true
+    serialVersionUID = 919286545866124006
+    keySet = null
+    values = null
+  dirsBeingMonitored = class java.util.HashSet@1e964849
+    serialVersionUID = -5024744406713321676
+    map = class java.util.HashMap@1dc74173
+      serialVersionUID = 362498820763181265
+      DEFAULT_INITIAL_CAPACITY = 16
+      MAXIMUM_CAPACITY = 1073741824
+      DEFAULT_LOAD_FACTOR = 0.75
+      TREEIFY_THRESHOLD = 8
+      UNTREEIFY_THRESHOLD = 6
+      MIN_TREEIFY_CAPACITY = 64
+      table = class java.util.HashMap$Node[16]
+      entrySet = null
+      size = 0
+      modCount = 21
+      threshold = 12
+      loadFactor = 0.75
+      keySet = class java.util.HashMap$KeySet@3918aafb
+      values = null
+    PRESENT = class java.lang.Object@70628575
+    MAX_ARRAY_SIZE = 2147483639
+  listeners = class java.util.concurrent.CopyOnWriteArrayList@3ae1964a
+    serialVersionUID = 8673264195747942595
+    lock = class java.util.concurrent.locks.ReentrantLock@765266fa
+      serialVersionUID = 7373984872572414699
+      sync = class java.util.concurrent.locks.ReentrantLock$NonfairSync@2b744562
+    array = class java.lang.Object[0]
+    UNSAFE = class sun.misc.Unsafe@3a25dda0
+      theUnsafe = class sun.misc.Unsafe@3a25dda0
+      INVALID_FIELD_OFFSET = -1
+      ARRAY_BOOLEAN_BASE_OFFSET = 16
+      ARRAY_BYTE_BASE_OFFSET = 16
+      ARRAY_SHORT_BASE_OFFSET = 16
+      ARRAY_CHAR_BASE_OFFSET = 16
+      ARRAY_INT_BASE_OFFSET = 16
+      ARRAY_LONG_BASE_OFFSET = 16
+      ARRAY_FLOAT_BASE_OFFSET = 16
+      ARRAY_DOUBLE_BASE_OFFSET = 16
+      ARRAY_OBJECT_BASE_OFFSET = 16
+      ARRAY_BOOLEAN_INDEX_SCALE = 1
+      ARRAY_BYTE_INDEX_SCALE = 1
+      ARRAY_SHORT_INDEX_SCALE = 2
+      ARRAY_CHAR_INDEX_SCALE = 2
+      ARRAY_INT_INDEX_SCALE = 4
+      ARRAY_LONG_INDEX_SCALE = 8
+      ARRAY_FLOAT_INDEX_SCALE = 4
+      ARRAY_DOUBLE_INDEX_SCALE = 8
+      ARRAY_OBJECT_INDEX_SCALE = 4
+      ADDRESS_SIZE = 8
+    lockOffset = 12
+  pathsBeingMonitored = class java.util.HashSet@8e61215
+    serialVersionUID = -5024744406713321676
+    map = class java.util.HashMap@3c966c54
+      serialVersionUID = 362498820763181265
+      DEFAULT_INITIAL_CAPACITY = 16
+      MAXIMUM_CAPACITY = 1073741824
+      DEFAULT_LOAD_FACTOR = 0.75
+      TREEIFY_THRESHOLD = 8
+      UNTREEIFY_THRESHOLD = 6
+      MIN_TREEIFY_CAPACITY = 64
+      table = class java.util.HashMap$Node[16]
+      entrySet = null
+      size = 0
+      modCount = 9
+      threshold = 12
+      loadFactor = 0.75
+      keySet = class java.util.HashMap$KeySet@4b1d51be
+      values = null
+    PRESENT = class java.lang.Object@70628575
+    MAX_ARRAY_SIZE = 2147483639
+  parent = null
+  children = class java.util.HashMap@5139c61e
+    serialVersionUID = 362498820763181265
+    DEFAULT_INITIAL_CAPACITY = 16
+    MAXIMUM_CAPACITY = 1073741824
+    DEFAULT_LOAD_FACTOR = 0.75
+    TREEIFY_THRESHOLD = 8
+    UNTREEIFY_THRESHOLD = 6
+    MIN_TREEIFY_CAPACITY = 64
+    table = null
+    entrySet = null
+    size = 0
+    modCount = 0
+    threshold = 0
+    loadFactor = 0.75
+    keySet = class java.util.HashMap$KeySet@73ea578f
+      this$0 = class java.util.HashMap@5139c61e
+      MAX_ARRAY_SIZE = 2147483639
+    values = class java.util.HashMap$Values@6c7c66da
+      this$0 = class java.util.HashMap@5139c61e
+      MAX_ARRAY_SIZE = 2147483639
+  enabledChildren = class java.util.ArrayList@7d411870
+    serialVersionUID = 8683452581122892189
+    DEFAULT_CAPACITY = 10
+    EMPTY_ELEMENTDATA = class java.lang.Object[0]
+    DEFAULTCAPACITY_EMPTY_ELEMENTDATA = class java.lang.Object[0]
+    elementData = class java.lang.Object[0]
+    size = 0
+    MAX_ARRAY_SIZE = 2147483639
+    modCount = 0
+    MAX_ARRAY_SIZE = 2147483639
+  pathInParent = null
+  serialVersionUID = -5797991102055520589
+  $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@3ab39918
+    strings[0] = "TraceComponent[com.ibm.ws.artifact.loose.internal.LooseArtifactNotifier,class com.ibm.ws.artifact.loose.internal.LooseArtifactNotifier,[archive.artifact.xml],com.ibm.ws.artifact.loose.internal.resources.LooseApiMessages,null]"
+
+Dump of objectArray[0]
+Object type = java.util.HashSet
+  serialVersionUID = -5024744406713321676
+  map = class java.util.HashMap@174ae07e
+    serialVersionUID = 362498820763181265
+    DEFAULT_INITIAL_CAPACITY = 16
+    MAXIMUM_CAPACITY = 1073741824
+    DEFAULT_LOAD_FACTOR = 0.75
+    TREEIFY_THRESHOLD = 8
+    UNTREEIFY_THRESHOLD = 6
+    MIN_TREEIFY_CAPACITY = 64
+    table = null
+    entrySet = null
+    size = 0
+    modCount = 0
+    threshold = 0
+    loadFactor = 0.75
+    keySet = null
+    values = null
+  PRESENT = class java.lang.Object@70628575
+  MAX_ARRAY_SIZE = 2147483639
+
+Dump of objectArray[1]
+Object type = java.util.HashSet
+  serialVersionUID = -5024744406713321676
+  map = class java.util.HashMap@7810fa0b
+    serialVersionUID = 362498820763181265
+    DEFAULT_INITIAL_CAPACITY = 16
+    MAXIMUM_CAPACITY = 1073741824
+    DEFAULT_LOAD_FACTOR = 0.75
+    TREEIFY_THRESHOLD = 8
+    UNTREEIFY_THRESHOLD = 6
+    MIN_TREEIFY_CAPACITY = 64
+    table = null
+    entrySet = null
+    size = 0
+    modCount = 0
+    threshold = 0
+    loadFactor = 0.75
+    keySet = null
+    values = null
+  PRESENT = class java.lang.Object@70628575
+  MAX_ARRAY_SIZE = 2147483639
+

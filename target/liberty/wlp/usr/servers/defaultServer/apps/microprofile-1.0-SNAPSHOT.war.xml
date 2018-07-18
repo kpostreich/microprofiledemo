@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archive>
+    <dir sourceOnDisk="/home/ibmdemo/Student/workspace/microprofile/target/m2e-wtp/web-resources" targetInArchive="/"/>
+    <dir sourceOnDisk="/home/ibmdemo/Student/workspace/microprofile/src/main/webapp" targetInArchive="/"/>
+    <dir sourceOnDisk="/home/ibmdemo/Student/workspace/microprofile/target/classes" targetInArchive="/WEB-INF/classes"/>
+</archive>

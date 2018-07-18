@@ -1,0 +1,39 @@
+Launching defaultServer (WebSphere Application Server 17.0.0.4/wlp-1.0.19.201712061531) on OpenJDK 64-Bit Server VM, version 1.8.0_171-8u171-b11-0ubuntu0.16.04.1-b11 (en_US)
+[AUDIT   ] CWWKE0001I: The server defaultServer has been launched.
+[AUDIT   ] CWWKE0100I: This product is licensed for development, and limited production use. The full license terms can be viewed here: https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/license/base_ilan/ilan/17.0.0.4/lafiles/en.html
+[AUDIT   ] CWWKG0016I: Starting server configuration update.
+[AUDIT   ] CWWKG0016I: Starting server configuration update.
+[AUDIT   ] CWWKZ0058I: Monitoring dropins for applications. 
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://10.1.153.0:9080/metrics/
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://10.1.153.0:9080/health/
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://10.1.153.0:9080/ibm/api/
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://10.1.153.0:9080/jwt/
+[AUDIT   ] CWWKF0012I: The server installed the following features: [microProfile-1.2, jsp-2.3, managedBeans-1.0, mpFaultTolerance-1.0, servlet-3.1, ssl-1.0, jndi-1.0, mpHealth-1.0, appSecurity-2.0, jsonp-1.0, mpConfig-1.1, jaxrs-2.0, el-3.0, jaxrsClient-2.0, concurrent-1.0, jwt-1.0, mpMetrics-1.0, mpJwt-1.0, json-1.0, cdi-1.2, distributedMap-1.0, websocket-1.1].
+[AUDIT   ] CWWKF0011I: The server defaultServer is ready to run a smarter planet.
+[AUDIT   ] CWWKF0012I: The server installed the following features: [localConnector-1.0].
+[AUDIT   ] CWWKF0008I: Feature update completed in 0.220 seconds.
+[AUDIT   ] CWWKG0017I: The server configuration was successfully updated in 32.700 seconds.
+[AUDIT   ] CWWKG0017I: The server configuration was successfully updated in 34.049 seconds.
+[AUDIT   ] CWWKF0008I: Feature update completed in 0.151 seconds.
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://10.1.153.0:9080/javametrics-dash/
+[AUDIT   ] CWWKZ0001I: Application javametrics-dash started in 1.309 seconds.
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://10.1.153.0:9080/javametrics/
+[AUDIT   ] CWWKZ0001I: Application javametrics-rest started in 1.432 seconds.
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://10.1.153.0:9080/microprofile/
+[AUDIT   ] CWWKZ0001I: Application microprofile-1.0-SNAPSHOT started in 2.718 seconds.
+[WARNING ] CWWKW1002W: The CDI scope of JAXRS-2.0 Provider BookListMessageBodyWriter is javax.enterprise.context.Dependent. Liberty gets the provider instance from CDI.
+[WARNING ] CWWKW1002W: The CDI scope of JAXRS-2.0 Provider BookMessageBodyWriter is javax.enterprise.context.Dependent. Liberty gets the provider instance from CDI.
+[WARNING ] CWWKW1002W: The CDI scope of JAXRS-2.0 Provider BookMessageBodyReader is javax.enterprise.context.Dependent. Liberty gets the provider instance from CDI.
+[AUDIT   ] CWWKE0055I: Server shutdown requested on Saturday, May 19, 2018 at 11:29 AM. The server defaultServer is shutting down.
+[AUDIT   ] CWWKE1100I: Waiting for up to 30 seconds for the server to quiesce.
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://10.1.153.0:9080/jwt/
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://10.1.153.0:9080/javametrics-dash/
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://10.1.153.0:9080/microprofile/
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://10.1.153.0:9080/metrics/
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://10.1.153.0:9080/health/
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://10.1.153.0:9080/ibm/api/
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://10.1.153.0:9080/javametrics/
+[AUDIT   ] CWWKZ0009I: The application javametrics-dash has stopped successfully.
+[AUDIT   ] CWWKZ0009I: The application javametrics-rest has stopped successfully.
+[AUDIT   ] CWWKZ0009I: The application microprofile-1.0-SNAPSHOT has stopped successfully.
+[AUDIT   ] CWWKE0036I: The server defaultServer stopped after 45.962 seconds.

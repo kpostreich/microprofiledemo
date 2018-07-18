@@ -1,0 +1,6 @@
+
+ Index  Count  Time of first Occurrence    Time of last Occurrence     Exception SourceId ProbeId
+------+------+---------------------------+---------------------------+---------------------------
+     0      2    6/26/18 12:47:49:344 PDT    6/26/18 12:47:49:794 PDT java.util.NoSuchElementException com.ibm.ws.microprofile.config.cdi.ConfigCDIExtension 129
+                                                                            - /home/ibmdemo/Student/workspace/microprofile/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_18.06.26_12.47.49.0.log
+------+------+---------------------------+---------------------------+---------------------------
