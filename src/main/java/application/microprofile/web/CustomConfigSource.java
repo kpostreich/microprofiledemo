@@ -13,17 +13,18 @@ import org.eclipse.microprofile.config.spi.ConfigSource;
 
 public class CustomConfigSource implements ConfigSource {
 
-	String fileLocation = System.getProperty("user.dir").split("target")[0]
-		      + "resources/CustomConfigSource.json";
+	String fileLocation = System.getProperty("user.dir").split("microprofile")[0]
+		      + "microprofile/resources/CustomConfigSource.json";
 	
+
   public CustomConfigSource() {
 		super();
 		
 			  
-			  System.out.println("user.dir: " + System.getProperty("user.dir"));
+	    System.out.println("user.dir: " + System.getProperty("user.dir"));
 			  
-			  System.out.println("File: " + System.getProperty("user.dir").split("target")[0]
-				      + "resources/CustomConfigSource.json");
+		System.out.println("File: " + System.getProperty("user.dir").split("microprofile")[0]
+				      + "microprofile/resources/CustomConfigSource.json");
 	}
 
 //String fileLocation = System.getProperty("user.dir").split("target")[0]
