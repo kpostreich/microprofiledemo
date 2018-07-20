@@ -13,10 +13,23 @@ import org.eclipse.microprofile.config.spi.ConfigSource;
 
 public class CustomConfigSource implements ConfigSource {
 
-  String fileLocation = System.getProperty("user.dir").split("target")[0]
-      + "resources/CustomConfigSource.json";
+	String fileLocation = System.getProperty("user.dir").split("target")[0]
+		      + "resources/CustomConfigSource.json";
+	
+  public CustomConfigSource() {
+		super();
+		
+			  
+			  System.out.println("user.dir: " + System.getProperty("user.dir"));
+			  
+			  System.out.println("File: " + System.getProperty("user.dir").split("target")[0]
+				      + "resources/CustomConfigSource.json");
+	}
+
+//String fileLocation = System.getProperty("user.dir").split("target")[0]
+//      + "resources/CustomConfigSource.json";
   
-    
+  
    
   @Override
   public int getOrdinal() {
@@ -72,13 +85,8 @@ public class CustomConfigSource implements ConfigSource {
   }
 
   public String readFile(String fileName) {
-    
-    System.out.println("user.dir: " + System.getProperty("user.dir"));
-	  
-	  System.out.println("File: " + System.getProperty("user.dir").split("target")[0]
-		      + "resources/CustomConfigSource.json");
-    
-    String result = "";
+   
+	String result = "";
     try {
       BufferedReader br = new BufferedReader(new FileReader(fileName));
       StringBuilder sb = new StringBuilder();
