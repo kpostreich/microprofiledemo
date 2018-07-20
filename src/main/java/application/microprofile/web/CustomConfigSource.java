@@ -72,6 +72,12 @@ public class CustomConfigSource implements ConfigSource {
   }
 
   public String readFile(String fileName) {
+    
+    System.out.println("user.dir: " + System.getProperty("user.dir"));
+	  
+	  System.out.println("File: " + System.getProperty("user.dir").split("target")[0]
+		      + "resources/CustomConfigSource.json");
+    
     String result = "";
     try {
       BufferedReader br = new BufferedReader(new FileReader(fileName));
